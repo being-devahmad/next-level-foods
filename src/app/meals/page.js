@@ -1,3 +1,4 @@
+import MealsGrid from "@/src/components/meals/meals-grid"
 import classes from "./page.module.css"
 
 
@@ -13,7 +14,9 @@ export default function MealsPage() {
                     </Link>
                 </p>
             </header>
-            <main className={classes.main}></main>
+            <main className={classes.main}>
+                <MealsGrid meals={[]} />
+            </main>
         </>
     )
 }
