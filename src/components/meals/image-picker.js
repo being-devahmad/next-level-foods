@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react"
+import {useEffect, useRef, useState} from "react"
 import classes from "./image-picker.module.css"
 import Image from "next/image"
 
-export default function ImagePicker({ label, name }) {
+export default function ImagePicker({label, name}) {
     const imageInput = useRef()
+
     function handlePicClick() {
         imageInput.current.click()
     }
@@ -35,7 +36,7 @@ export default function ImagePicker({ label, name }) {
             <div className={classes.controls}>
                 <div className={classes.preview}>
                     {!pickdImage && <p>No image picked yet.</p>}
-                    {pickdImage && <Image src={pickdImage} fill />}
+                    {pickdImage && <Image src={pickdImage} alt={'image'} fill/>}
                 </div>
                 <input
                     ref={imageInput}
