@@ -1,13 +1,17 @@
-import { Suspense } from "react";
+import {Suspense} from "react";
 import classes from "./page.module.css";
 import Link from "next/link";
 import MealsGrid from "@/src/components/meals/meals-grid";
-import { getMeals } from "@/src/lib/meals";
+import {getMeals} from "@/src/lib/meals";
+
+export const metadata = {
+    title: 'All Meals',
+    description: 'Browse the delicious meals shared by our vibrant community',
+};
 
 async function Meals() {
     const meals = await getMeals()
-
-    return <MealsGrid meals={meals} />
+    return <MealsGrid meals={meals}/>
 }
 
 export default function MealsPage() {
@@ -34,7 +38,7 @@ export default function MealsPage() {
                         Fetching meals...
                     </p>
                 }>
-                    <Meals />
+                    <Meals/>
                 </Suspense>
             </main>
         </>
